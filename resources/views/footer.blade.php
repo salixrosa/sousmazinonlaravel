@@ -6,10 +6,10 @@
         'menu_id'					=> 'footer-menu',
     ));
     <p id="theme">
-        <a href="https://github.com/salixrosa/sousMazin">
+        <a href="https://github.com/salixrosa/sousmazinonlaravel">
             <i class="fa fa-github"></i>
             <br>
-            sousMazin
+            sousMazinOnLaravel
         </a>
     </p>
 </footer>

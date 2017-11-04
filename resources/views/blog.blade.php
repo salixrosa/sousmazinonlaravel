@@ -20,7 +20,9 @@
                 </header>
 
                 <div class="postcontent">
-                    TODO the_content();
+                    <p>
+                        TODO the_content();
+                    </p>
                 </div>
             </article>
 
