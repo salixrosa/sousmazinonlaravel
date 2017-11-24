@@ -88,6 +88,7 @@ video {
   font-family: inherit;
   box-sizing: border-box;
 }
+@import 'node_modules/font-awesome/css/font-awesome.css';
 html {
   background-color: #fff;
   font-family: 'Open Sans';
@@ -118,12 +119,11 @@ html {
   font-size: 1.5em;
 }
 #banner nav {
-  height: 5rem;
+  height: 6rem;
 }
 #header-menu {
   font-size: 1.8rem;
   letter-spacing: 3px;
-  text-align: center;
   border: solid 1px;
   border-width: 1px 0;
   margin: 2.5rem 0 0;
@@ -132,11 +132,10 @@ html {
   position: relative;
 }
 #header-menu li {
-  padding: 1rem 1.75rem;
+  padding: 1rem 0 1rem 1.75rem;
   letter-spacing: 3px;
   vertical-align: top;
   display: inline-block;
-  text-align: left;
   position: relative;
 }
 #header-menu li:hover .sub-menu {

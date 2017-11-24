@@ -4,27 +4,32 @@
     <body>
         <div class="center">
             @include('header')
-            <article>
-                <header class="postmeta">
 
-                    <h2>
-                        <a href="TODO the_permalink()" class="tosingle">
-                            TODO the_title(); 
-                        </a>
-                    </h2>
+            @if (empty($fullContent))
+                Oops! We have no content for you right now. 
+            @else
+                @foreach ($fullContent as $post)
+                    <article>
+                        <header class="postmeta">
 
-                    <time datetime="TODO get_the_date('Y-m-d')">
-                        TODO strtolower(get_the_date());
-                    </time>
+                            <h2>
+                                <a href="{{$post->slug}}" class="tosingle">
+                                    {{$post->title}}
+                                </a>
+                            </h2>
 
-                </header>
+                            <time datetime="{{$post->created_at}}">
+                                {{$post->created_at}}
+                            </time>
 
-                <div class="postcontent">
-                    <p>
-                        TODO the_content();
-                    </p>
-                </div>
-            </article>
+                        </header>
+
+                        <div class="postcontent">
+                            {!!$post->content!!}
+                        </div>
+                    </article>
+                @endforeach
+            @endif
 
             @include('footer')
         </div>
