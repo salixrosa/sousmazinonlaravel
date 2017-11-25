@@ -15,7 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $fullContent = FullContent::where('active', true)->orderBy('created_at', 'desc')->get();
+        $fullContent = FullContent::where([['active', true], ['page_only', false]])->orderBy('created_at', 'desc')->get();
 
         return view('blog', ['fullContent' => $fullContent]);
     }

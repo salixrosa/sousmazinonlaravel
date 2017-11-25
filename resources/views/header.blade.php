@@ -1,7 +1,7 @@
 <header id="banner">
     <h1>
         <a href="/">
-            Willow Sells
+            {{ $header }}
         </a>
     </h1>
 <nav role="navigation">
@@ -20,6 +20,6 @@
     </ul>
 </nav>
 <p id="tagline">
-    bloginfo( 'description' );
+    {{ $tagline }}
 </p>
 </header>
