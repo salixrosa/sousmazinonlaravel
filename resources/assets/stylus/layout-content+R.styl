@@ -6,10 +6,32 @@ code {
 article {
   margin-bottom: 6rem;
 }
+
+.postmeta {
+  padding-bottom: .75rem;
+  border-bottom: solid 1px gray;
+  color: $posttitlecolor;
+  h1, h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    padding: .75rem 0 .75rem;
+  }
+  time {
+    font-size: 1.35rem;
+  }
+}
+
+hr {
+  border: solid 1px lightgray;
+  border: 1px 0 0;
+  margin: 3rem 0;
+}
+
 .postcontent {
-  padding-bottom: 5rem;
+  padding: 1.5rem 0 5rem;
   font-size: 1.5rem;
   line-height: 1.75em;
+  color: $posttitlecolor;
 
   a {
     color: $contentacolor;
@@ -26,8 +48,7 @@ article {
   }
 
   // Below is both for p spacing within content and for displaying nested lists in content!
-  p, > ul { // The top-level UL element in the content, as well as any P elements, need to use margins instead of padding so that any header elements above can dictate the entirety of the spacing
-    margin-top: 1rem;
+  p, > ul {
     padding-bottom: 1rem;
     clear: both;
   }
@@ -54,30 +75,6 @@ article {
   }
 }
 
-.postmeta {
-  width: 35%;
-  text-align: center;
-  margin: 0 auto 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: solid 1px gray;
-  color: $posttitlecolor;
-  letter-spacing: .5px;
-  h1, h2 {
-    font-family: $posttitlefont;
-    font-size: 2rem;
-    padding: .25rem 0 .75rem;
-  }
-  time {
-    font-size: 1.35rem;
-  }
-}
-
-hr {
-  border: solid 1px lightgray;
-  border: 1px 0 0;
-  margin: 3rem 0;
-}
-
 p.push {
   margin-bottom: 3rem;
 }
@@ -85,17 +82,7 @@ p.push {
 .fifty {
   font-size: 150%;
 }
-.contenta {
-  color: $contentacolor;
-}
 
 +respond-to(max-width,675px)
-  .postmeta, .postcontent
-    display: block;
-    width: 100%;
   .postcontent
     border-bottom: solid 4px #D7D7D7;
-  .postmeta
-    text-align: center;
-    h1, h2
-      font-size: 2rem;

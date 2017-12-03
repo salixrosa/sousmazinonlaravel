@@ -19,4 +19,15 @@ class BlogController extends Controller
 
         return view('blog', ['fullContent' => $fullContent]);
     }
+
+    /**
+     * Displays a particular content, if the content exists.
+     * @return Response
+     */
+    public function individualContent($slug)
+    {
+        $fullContent = FullContent::where([['active', true], ['slug', $slug]])->get();
+
+        return view('blog', ['fullContent' => $fullContent]);
+    }
 }

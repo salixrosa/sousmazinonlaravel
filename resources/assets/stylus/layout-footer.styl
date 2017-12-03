@@ -1,9 +1,17 @@
-footer {
+#footer {
+  // Sticky footer! Why am I still doing this this way?
+  position: absolute;
+  bottom: 0;
+  height: $footerheight;
+  @extend $center; // the position:absolute makes centering this guy difficult, unless we just use the same CSS
+
+  padding: 5rem 0;
+
   color: $footercolor;
   font-size: 1.8rem;
   text-align: center;
-  padding: 5rem 0;
 }
+
 #footer-menu {
   font-family: $footerfont;
   font-size: 1.75rem;
@@ -15,15 +23,17 @@ footer {
     }
   }
 }
+
 #theme {
   color: $repocolor;
   font-size: 1.4rem;
   letter-spacing: 2px;
-  margin: 8rem 0 4rem;
+
   i {
     font-size: 3.3rem;
     padding-bottom: .5rem;
   }
+
   &:hover {
       color: $repohoverc;
   }

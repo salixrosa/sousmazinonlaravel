@@ -1,12 +1,33 @@
 html {
+  // Sticky footer
+  min-height: 100%;
+
   background-color: $bodybgc;
   font-family: $bodyfont;
-  font-size: 10px;
+  font-size: 10px; // I like having a 10px basis for my REMs
 }
-.center {
+
+body {
+  // Sticky footer
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+
+  font-size: 16px;
+}
+
+$center { // this is only actually going to be used via stylus' awesome extend!
   margin: 0 auto;
   width: 100%;
   max-width: 600px;
   min-width: 320px;
-  padding: 0 1rem;
+
+  // These are so that our centering elements, such as the footer, can still give themselves vertical padding
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#main {
+  margin-bottom: $footerheight;
+  @extend $center;
 }

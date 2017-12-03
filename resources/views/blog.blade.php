@@ -2,32 +2,18 @@
 <html lang="{{ app()->getLocale() }}">
     @include('head')
     <body>
-        <div class="center">
+        <div id="main">
             @include('header')
 
-            @if (empty($fullContent))
-                Oops! We have no content for you right now. 
+            @if ($fullContent->isEmpty())
+
+                Oops! We couldn't find the content you requested.
+
             @else
-                @foreach ($fullContent as $post)
-                    <article>
-                        <header class="postmeta">
+                @foreach ($fullContent as $singleFullContent)
+    
+                    @include('content', ['singleFullContent' => $singleFullContent])
 
-                            <h2>
-                                <a href="{{$post->slug}}" class="tosingle">
-                                    {{$post->title}}
-                                </a>
-                            </h2>
-
-                            <time datetime="{{$post->created_at}}">
-                                {{$post->created_at}}
-                            </time>
-
-                        </header>
-
-                        <div class="postcontent">
-                            {!!$post->content!!}
-                        </div>
-                    </article>
                 @endforeach
             @endif
 

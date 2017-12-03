@@ -90,23 +90,34 @@ video {
 }
 @import 'node_modules/font-awesome/css/font-awesome.css';
 html {
+  min-height: 100%;
   background-color: #fff;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-size: 10px;
 }
-.center {
+body {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  font-size: 16px;
+}
+#main,
+#footer {
   margin: 0 auto;
   width: 100%;
   max-width: 600px;
   min-width: 320px;
-  padding: 0 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+#main {
+  margin-bottom: 16rem;
 }
 #banner {
-  margin: 1rem 0 10rem;
+  margin: 1rem 0 7rem;
   padding: 1rem 0;
   font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   color: #404040;
-  text-align: center;
 }
 #banner h1,
 #banner h2 {
@@ -119,20 +130,19 @@ html {
   font-size: 1.5em;
 }
 #banner nav {
-  height: 6rem;
+  height: 4rem;
 }
 #header-menu {
   font-size: 1.8rem;
   letter-spacing: 3px;
   border: solid 1px;
   border-width: 1px 0;
-  margin: 2.5rem 0 0;
   padding: 1rem 0;
   background-color: #fff;
   position: relative;
 }
 #header-menu li {
-  padding: 1rem 0 1rem 1.75rem;
+  padding-right: 2rem;
   letter-spacing: 3px;
   vertical-align: top;
   display: inline-block;
@@ -171,22 +181,18 @@ html {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
-  padding: 3rem 0;
-}
-.outerbutton,
-.innerbutton {
-  display: none;
+  padding: 1rem 0;
 }
 @media only screen and (max-width: 675px) {
-  .menu-item-has-children:after {
+  .has-children:after {
     font-family: 'FontAwesome';
-    font-size: 0.9em;
+    font-size: 1em;
     position: absolute;
-    top: 0.83em;
-    right: -2px;
+    top: 0.15em;
+    right: 0px;
     content: '\f0da';
   }
-  .menu-item-has-children:hover:after {
+  .has-children:hover:after {
     content: '\f0d7';
   }
 }
@@ -197,10 +203,30 @@ code {
 article {
   margin-bottom: 6rem;
 }
+.postmeta {
+  padding-bottom: 0.75rem;
+  border-bottom: solid 1px #808080;
+  color: #404040;
+}
+.postmeta h1,
+.postmeta h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  padding: 0.75rem 0 0.75rem;
+}
+.postmeta time {
+  font-size: 1.35rem;
+}
+hr {
+  border: solid 1px #d3d3d3;
+  border: 1px 0 0;
+  margin: 3rem 0;
+}
 .postcontent {
-  padding-bottom: 5rem;
+  padding: 1.5rem 0 5rem;
   font-size: 1.5rem;
   line-height: 1.75em;
+  color: #404040;
 }
 .postcontent a {
   color: #638be1;
@@ -215,7 +241,6 @@ article {
 }
 .postcontent p,
 .postcontent > ul {
-  margin-top: 1rem;
   padding-bottom: 1rem;
   clear: both;
 }
@@ -240,60 +265,25 @@ article {
 .postcontent h3 {
   font-size: 1.2rem;
 }
-.postmeta {
-  width: 35%;
-  text-align: center;
-  margin: 0 auto 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: solid 1px #808080;
-  color: #404040;
-  letter-spacing: 0.5px;
-}
-.postmeta h1,
-.postmeta h2 {
-  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-  font-size: 2rem;
-  padding: 0.25rem 0 0.75rem;
-}
-.postmeta time {
-  font-size: 1.35rem;
-}
-hr {
-  border: solid 1px #d3d3d3;
-  border: 1px 0 0;
-  margin: 3rem 0;
-}
 p.push {
   margin-bottom: 3rem;
 }
 .fifty {
   font-size: 150%;
 }
-.contenta {
-  color: #638be1;
-}
 @media only screen and (max-width: 675px) {
-  .postmeta,
-  .postcontent {
-    display: block;
-    width: 100%;
-  }
   .postcontent {
     border-bottom: solid 4px #d7d7d7;
   }
-  .postmeta {
-    text-align: center;
-  }
-  .postmeta h1,
-  .postmeta h2 {
-    font-size: 2rem;
-  }
 }
-footer {
+#footer {
+  position: absolute;
+  bottom: 0;
+  height: 16rem;
+  padding: 5rem 0;
   color: #777;
   font-size: 1.8rem;
   text-align: center;
-  padding: 5rem 0;
 }
 #footer-menu {
   font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
@@ -310,7 +300,6 @@ footer {
   color: #638be1;
   font-size: 1.4rem;
   letter-spacing: 2px;
-  margin: 8rem 0 4rem;
 }
 #theme i {
   font-size: 3.3rem;

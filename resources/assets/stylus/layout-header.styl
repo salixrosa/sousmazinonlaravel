@@ -1,9 +1,8 @@
 #banner {
-  margin: 1rem 0 10rem;
+  margin: 1rem 0 7rem;
   padding: 1rem 0;
   font-family: $bannerfont;
   color: $bannercolor;
-  text-align: center;
   h1, h2 {
     font-size: 5.5rem;
     font-weight: bold;
@@ -13,7 +12,7 @@
     }
   }
   nav { // this guy actually wraps #header-menu below, but we don't want our output CSS getting too messy so we keep IDs at the top
-    height: 6rem; // the actual # here only matters a little for spacing, really we just need a general place-holder to keep content from shifting
+    height: 4rem; // the actual # here only matters a little for spacing, really we just need a general place-holder to keep content from shifting
   }
 }
 
@@ -22,12 +21,11 @@
   letter-spacing: 3px;
   border: solid 1px;
   border-width: 1px 0;
-  margin: 2.5rem 0 0;
   padding: 1rem 0;
   background-color: $bodybgc;
   position: relative; // puts on different z-level, otherwise would show below elements following in DOM
   li {
-    padding: 1rem 0 1rem 1.75rem;
+    padding-right: 2rem;
     letter-spacing: 3px;
     vertical-align: top;
     display: inline-block;
@@ -67,19 +65,16 @@
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
-  padding: 3rem 0;
-}
-.outerbutton, .innerbutton {
-  display: none;
+  padding: 1rem 0;
 }
 
 +respond-to(max-width, 675px)
-  .menu-item-has-children:after
+  .has-children:after
     font-family: 'FontAwesome';
-    font-size: .9em;
+    font-size: 1em;
     position: absolute;
-    top: .83em;
-    right: -2px;
+    top: .15em;
+    right: 0px;
     content: '\f0da';
-  .menu-item-has-children:hover:after
+  .has-children:hover:after
     content: '\f0d7';
